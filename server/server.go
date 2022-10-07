@@ -25,6 +25,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"golang.org/x/crypto/bcrypt"
 
+	//"github.com/cty3000/dex/connector/line"
 	"github.com/dexidp/dex/connector"
 	"github.com/dexidp/dex/connector/atlassiancrowd"
 	"github.com/dexidp/dex/connector/authproxy"
@@ -537,6 +538,7 @@ type ConnectorConfig interface {
 // ConnectorsConfig variable provides an easy way to return a config struct
 // depending on the connector type.
 var ConnectorsConfig = map[string]func() ConnectorConfig{
+	//"line":            func() ConnectorConfig { return new(line.Config) },
 	"keystone":        func() ConnectorConfig { return new(keystone.Config) },
 	"mockCallback":    func() ConnectorConfig { return new(mock.CallbackConfig) },
 	"mockPassword":    func() ConnectorConfig { return new(mock.PasswordConfig) },
